@@ -45,7 +45,7 @@
   }
 
   html {
-    scroll-behavior: smooth;
+    scroll-behavior: auto;
   }
 
   body {
@@ -62,6 +62,15 @@
 
 /* ─── Component Classes ────────────────────────────────────────────────────── */
 @layer components {
+
+  input[type="text"],
+  input[type="number"],
+  input[type="tel"],
+  input[type="range"],
+  button,
+  a {
+    touch-action: manipulation;
+  }
 
   /* Amount selection buttons */
   .amount-btn {

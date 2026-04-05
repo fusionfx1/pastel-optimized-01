@@ -1,6 +1,4 @@
 ---
-import { ZIP_CITIES } from '../data/zip-cities.ts';
-
 interface Props {
   h1?: string;
   sub?: string;
@@ -210,19 +208,28 @@ const trustItems = [
     </div>
   </div>
 
-  <script define:vars={{ redirectUrl, ZIP_CITIES }}>
+  <script define:vars={{ redirectUrl }}>
     var grid     = document.getElementById('amount-grid');
     var ctaBtn   = document.getElementById('hero-cta');
     var ctaError = document.getElementById('hero-cta-error');
     var zipInput = document.getElementById('zip-input');
     var cityHint = document.getElementById('zip-city-hint');
 
+    var zipData = null;
+
+    (window.requestIdleCallback || function(cb){ setTimeout(cb, 300); })(function() {
+      fetch('/zip-cities.json')
+        .then(function(r) { return r.json(); })
+        .then(function(d) { zipData = d; })
+        .catch(function() {});
+    });
+
     function isValidZip(zip) {
       return /^\d{5}$/.test(zip);
     }
 
     function getCityForZip(zip) {
-      return ZIP_CITIES[zip] || null;
+      return zipData ? (zipData[zip] || null) : null;
     }
 
     function showError(msg) {

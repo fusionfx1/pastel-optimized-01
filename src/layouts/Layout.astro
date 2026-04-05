@@ -73,32 +73,26 @@ const canonicalUrl = siteUrl;
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@700;800&display=swap" />
   </noscript>
 
-  <script is:inline define:vars={{ brand, siteUrl, aprMin, aprMax, amtMin, amtMax, phone, email }}>
-    const jsonLd = [
-      {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": brand,
-        "url": siteUrl,
-        "telephone": phone,
-        "email": email,
-        "sameAs": [siteUrl],
-      },
-      {
-        "@context": "https://schema.org",
-        "@type": "LoanOrCredit",
-        "name": brand + " Veterinary Installment Loan",
-        "loanTerm": { "@type": "QuantitativeValue", "minValue": 2, "maxValue": 60, "unitCode": "MON" },
-        "amount": { "@type": "MonetaryAmount", "minValue": amtMin, "maxValue": amtMax, "currency": "USD" },
-        "annualPercentageRate": { "@type": "QuantitativeValue", "minValue": aprMin, "maxValue": aprMax },
-        "provider": { "@type": "Organization", "name": brand, "url": siteUrl },
-      },
-    ];
-    const s = document.createElement('script');
-    s.type = 'application/ld+json';
-    s.text = JSON.stringify(jsonLd);
-    document.head.appendChild(s);
-  </script>
+  <script type="application/ld+json" set:html={JSON.stringify([
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": brand,
+      "url": siteUrl,
+      "telephone": phone,
+      "email": email,
+      "sameAs": [siteUrl],
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "LoanOrCredit",
+      "name": `${brand} Veterinary Installment Loan`,
+      "loanTerm": { "@type": "QuantitativeValue", "minValue": 2, "maxValue": 60, "unitCode": "MON" },
+      "amount": { "@type": "MonetaryAmount", "minValue": amtMin, "maxValue": amtMax, "currency": "USD" },
+      "annualPercentageRate": { "@type": "QuantitativeValue", "minValue": aprMin, "maxValue": aprMax },
+      "provider": { "@type": "Organization", "name": brand, "url": siteUrl },
+    },
+  ])} />
 
   <script is:inline define:vars={{ conversionId }}>
     window.dataLayer = window.dataLayer || [];
