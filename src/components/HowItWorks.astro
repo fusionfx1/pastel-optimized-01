@@ -4,32 +4,32 @@ const redirectUrl = import.meta.env.PUBLIC_REDIRECT_URL || '${redirectUrl}';
 const steps = [
   {
     num: '01',
-    title: 'Answer a few quick questions',
-    desc: 'Share your loan amount, purpose, and basic details in about 3 minutes. We use a soft credit check — your score stays exactly where it is.',
-    icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>`,
+    title: 'See your plan options in 60 seconds',
+    desc: 'Enter a few basic details and Scratchpay\'s proprietary technology returns your available payment plan options in under a minute — using a soft inquiry that never touches your credit score.',
+    icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>`,
     accent: 'hsl(193 46% 44%)',
     accentBg: 'hsl(193 46% 60% / 0.12)',
   },
   {
     num: '02',
-    title: 'Review your matched offers',
-    desc: 'See real rate options from lenders in our network within seconds. Compare payments, terms, and total cost side by side before deciding.',
+    title: 'Compare plans — pick what fits your budget',
+    desc: 'Review your plan options side by side. See the monthly payment, total cost, and APR for each before you choose. Including 0% APR promotional options for qualified applicants.',
     icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>`,
     accent: 'hsl(338 55% 60%)',
     accentBg: 'hsl(338 70% 91% / 0.5)',
   },
   {
     num: '03',
-    title: 'E-sign your agreement',
-    desc: 'Every term, fee, and payment date is spelled out plainly before you sign. Complete your documents electronically from any device.',
-    icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`,
+    title: 'Confirm at the clinic — paperless',
+    desc: 'Scratchpay integrates directly with your veterinary practice\'s system. No printing, no branch visits. Confirm your plan digitally from any device — at the clinic or from the waiting room.',
+    icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>`,
     accent: 'hsl(130 42% 48%)',
     accentBg: 'hsl(130 42% 82% / 0.3)',
   },
   {
     num: '04',
-    title: 'Receive funds directly',
-    desc: 'Your lender deposits the funds straight into your checking or savings account — most borrowers see the money within one business day.',
+    title: 'Direct your attention back to your pet',
+    desc: 'The financial decision is made. You know the amount, the term, and the monthly payment. It becomes a fixed line in your budget — and your pet gets the care they need, today.',
     icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>`,
     accent: 'hsl(193 46% 44%)',
     accentBg: 'hsl(193 46% 60% / 0.12)',
@@ -41,10 +41,10 @@ const steps = [
   <div class="max-w-6xl mx-auto">
 
     <div class="text-center mb-16">
-      <span class="section-label">Four Steps, One Business Day</span>
-      <h2 class="section-title max-w-xl mx-auto">How It Works</h2>
+      <span class="section-label">The Intelligent Way to Pay for Vet Care</span>
+      <h2 class="section-title max-w-xl mx-auto">How Scratchpay Works</h2>
       <p class="text-foreground/70 text-base max-w-lg mx-auto">
-        A straightforward process built so you spend less time on forms and more time on what actually matters.
+        Veterinary financing built for how emergencies actually work — fast, transparent, and designed around your budget, not a credit committee.
       </p>
     </div>
 
@@ -81,11 +81,11 @@ const steps = [
     <!-- Bottom CTA strip -->
     <div class="mt-10 glass-card p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
       <div>
-        <p class="font-display font-bold text-foreground text-base">See your rate before you commit to anything</p>
-        <p class="text-foreground/70 text-sm">Takes about 3 minutes. Uses a soft inquiry — zero impact to your credit score.</p>
+        <p class="font-display font-bold text-foreground text-base">See your plan options before you commit to anything</p>
+        <p class="text-foreground/70 text-sm">Takes 60 seconds. Soft inquiry only — zero impact to your credit score.</p>
       </div>
       <a href={redirectUrl} class="btn-primary flex-shrink-0">
-        View My Rate Options
+        Start My 60-Second Check — It's Free
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
           <path d="M5 12h14M12 5l7 7-7 7"/>
         </svg>

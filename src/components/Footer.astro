@@ -9,45 +9,45 @@ const email    = import.meta.env.PUBLIC_EMAIL   || '${email}';
 const redirectUrl = import.meta.env.PUBLIC_REDIRECT_URL || '${redirectUrl}';
 
 const popupContent: Record<string, { title: string; body: string }> = {
-  'Debt Consolidation': {
-    title: 'Debt Consolidation',
-    body: 'If you carry balances on multiple accounts with varying interest rates, consolidating them into a single fixed-rate installment loan can simplify your monthly obligations and may reduce the total interest you pay over time. A fixed monthly payment means you always know exactly what is due and when.',
+  'Emergency Vet Care': {
+    title: 'Emergency Veterinary Care',
+    body: 'Unexpected emergencies — after-hours crises, sudden illness, traumatic injuries — often carry the largest and least predictable bills. Scratchpay\'s 60-second plan check is available around the clock, so you can see your payment plan options the moment you need them, not the morning after.',
   },
-  'Home Improvement': {
-    title: 'Home Improvement',
-    body: 'An installment loan lets you fund repairs, renovations, or upgrades without using home equity or drawing from savings. Your payment amount stays the same every month for the full term, making it straightforward to incorporate into your household budget from day one.',
+  'Routine & Preventive Care': {
+    title: 'Routine & Preventive Care',
+    body: 'Not every vet bill is an emergency, but routine care — dental cleanings, annual diagnostics, vaccinations, wellness exams — adds up over time. Scratchpay payment plans let you spread the cost of planned care across predictable monthly payments at a fixed rate, so preventive care stays within reach.',
   },
-  'Medical Loans': {
-    title: 'Medical Loans',
-    body: 'Unexpected health expenses can arrive without warning. An installment loan provides a defined amount at a fixed rate, giving you a clear repayment timeline rather than an open-ended balance. Lenders in our network evaluate applicants across a range of credit profiles, and funding typically occurs within one business day of signing.',
+  'Specialist & Surgical Care': {
+    title: 'Specialist & Surgical Care',
+    body: 'Specialist referrals, orthopedic procedures, oncology treatment, and complex surgeries often involve multi-thousand-dollar estimates. Scratchpay offers payment plans up to $5,000 with terms designed to match the size of the bill to a manageable monthly obligation.',
   },
   'How It Works': {
-    title: 'How It Works',
-    body: 'Step 1 — Enter your loan amount and ZIP code to begin a soft-inquiry rate check that does not affect your credit score.\nStep 2 — Review the offers returned by lenders in our network, including rate, term, and monthly payment.\nStep 3 — Accept the offer that fits your budget and complete e-signature on your loan agreement.\nStep 4 — Your lender initiates a direct deposit to your bank account, typically arriving by the next business morning.',
+    title: 'How Scratchpay Works',
+    body: 'Step 1 — Enter your care plan amount and ZIP code to begin a 60-second soft-inquiry plan check that does not affect your credit score.\nStep 2 — Review your available payment plan options, including APR, term, and monthly payment for each.\nStep 3 — Select the plan that fits your budget and confirm at the clinic using Scratchpay\'s integrated system.\nStep 4 — Your veterinary practice receives confirmation and your pet\'s treatment proceeds.',
   },
   'Payment Calculator': {
-    title: 'Payment Calculator',
-    body: 'Our on-page calculator lets you adjust loan amount, repayment term, and estimated APR to see the resulting monthly payment before you apply. Use it to identify the combination that fits comfortably within your monthly budget. Remember that your actual rate will depend on lender underwriting and your credit profile.',
+    title: 'Payment Plan Calculator',
+    body: 'The on-page calculator lets you adjust the care plan amount, repayment term, and estimated APR to see the resulting monthly payment before you check your options. Use it to identify a combination that fits comfortably within your monthly budget. Your actual plan options and rate are shown when you run your 60-second check.',
   },
   'APR & Rates': {
-    title: 'APR & Rates',
-    body: `Rates available through our marketplace range from ${aprMin}% to ${aprMax}% APR. Your specific rate is determined by the lender based on your credit score, income, requested amount, and repayment term. All rates are fixed — your payment amount will not change during the life of the loan. No prepayment penalties apply.`,
+    title: 'APR & Plan Rates',
+    body: `Scratchpay payment plans range from ${aprMin}% to ${aprMax}% APR. Certain plans carry a 0% promotional APR for qualified applicants. All rates are fixed — your monthly payment amount will not change during the life of the plan. No prepayment penalties apply. Every rate, fee, and payment amount is disclosed in full before you confirm any plan.`,
   },
   'FAQ': {
     title: 'Common Questions',
-    body: 'Q: Does checking my rate hurt my credit?\nA: No. Rate checks use a soft inquiry with no impact to your score.\n\nQ: When do I receive the funds?\nA: Most borrowers see the deposit within one business day of signing.\n\nQ: Is there a penalty for paying early?\nA: No. You may pay off the balance at any time at no additional cost.\n\nQ: What if no lender makes me an offer?\nA: You will be notified clearly and may reapply at a later date.',
+    body: 'Q: Does checking my plan options hurt my credit?\nA: No. Scratchpay uses a soft inquiry only — zero impact to your score.\n\nQ: Are there 0% APR options?\nA: Yes. 0% promotional APR plans are available for qualified applicants. Your available plans are shown in full before you confirm.\n\nQ: Is there a penalty for paying early?\nA: No. You may pay off the balance at any time at no additional cost.\n\nQ: What if I am not approved for a plan?\nA: You will be notified clearly. There is no penalty for checking your options.',
   },
   'About Us': {
-    title: 'About Us',
-    body: `${brand} is an online loan referral marketplace that connects consumers with a network of independent, licensed lenders offering fixed-rate installment loans. We do not make credit decisions or set loan terms — our role is to present you with offers from lenders who are willing to work with your financial profile, so you can compare and choose what makes sense for you.`,
+    title: 'About Scratchpay',
+    body: `${brand} is a veterinary payment plan platform that connects pet owners with financing options for veterinary care. We work directly with veterinary practices to offer transparent, fixed-rate payment plans at the point of care. We do not use hard credit inquiries to show you your plan options, and all costs are disclosed before you confirm anything.`,
   },
   'Privacy Policy': {
     title: 'Privacy Policy',
-    body: 'We collect only the information needed to process your rate inquiry and match you with lenders. Your data is encrypted in transit using TLS 1.3 and encrypted at rest. We do not sell your personal information to advertisers or unaffiliated third parties. You may request access to or deletion of your data at any time by contacting our support team.',
+    body: 'We collect only the information necessary to process your plan check and confirm your selection with your veterinary practice. Your data is encrypted in transit using TLS 1.3 and encrypted at rest. We do not sell your personal information to advertisers or unaffiliated third parties. You may request access to or deletion of your data at any time by contacting our support team.',
   },
   'Terms of Service': {
     title: 'Terms of Service',
-    body: `By submitting an inquiry through ${brand}, you acknowledge that ${brand} operates as a loan referral marketplace and is not a direct lender. All loan approval decisions, interest rates, and repayment terms are determined solely by the participating lender. ${brand} does not guarantee approval or specific loan terms. Submitting a request does not constitute a loan application or a binding agreement.`,
+    body: `By submitting a plan inquiry through ${brand}, you acknowledge that ${brand} facilitates payment plan options for veterinary care and is not a direct lender in all markets. All plan approval decisions, rates, and repayment terms are subject to the terms of the specific plan selected. ${brand} does not guarantee approval or specific plan terms. Submitting a plan check does not constitute a binding agreement.`,
   },
   'Accessibility': {
     title: 'Accessibility',
@@ -85,15 +85,15 @@ const popupContent: Record<string, { title: string; body: string }> = {
   <div class="max-w-6xl mx-auto">
     <div class="premium-card p-10 md:p-14 text-center relative overflow-hidden">
       <div class="absolute inset-0 pointer-events-none prefooter-glow"></div>
-      <span class="section-label relative">Fixed Rates. No Surprises.</span>
+      <span class="section-label relative">Say Yes to Treatment Today.</span>
       <h2 class="font-display font-bold text-3xl md:text-4xl text-foreground relative mb-4">
-        Find Out What Rate You Qualify For
+        View Your Payment Plan Options — It Takes 60 Seconds
       </h2>
       <p class="text-foreground/70 text-base max-w-xl mx-auto mb-8 relative">
-        A soft credit check takes about 3 minutes and leaves your score untouched. Over 50,000 borrowers have used our marketplace to find a loan that fit their budget.
+        No hard credit inquiry. No application fees. Every rate, term, and monthly payment shown in full before you confirm anything.
       </p>
       <a href={redirectUrl} class="btn-primary text-base py-4 px-10 relative">
-        See My Rate Options — No Cost
+        Get My Financing Options
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
           <path d="M5 12h14M12 5l7 7-7 7"/>
         </svg>
@@ -103,7 +103,7 @@ const popupContent: Record<string, { title: string; body: string }> = {
       <div class="flex flex-wrap justify-center gap-6 mt-8 text-foreground/60 text-xs">
         {[
           'Soft inquiry only — score unaffected',
-          'Direct deposit as fast as same business day',
+          '0% APR options for qualified applicants',
           'Fixed payment amount for every month',
           'Pay off early at no additional cost',
         ].map(item => (
@@ -131,11 +131,11 @@ const popupContent: Record<string, { title: string; body: string }> = {
       </h3>
       <div class="space-y-2 text-foreground/60 text-xs leading-relaxed">
         <p><strong class="text-foreground/70">Loan Terms &amp; Amounts:</strong> Loan amounts range from ${amtMin} to ${amtMax}. Minimum repayment term: 61 days. Maximum repayment term: 60 months (5 years). All loan products offered through this platform require repayment in full in 61 days or longer.</p>
-        <p><strong class="text-foreground/70">Maximum APR:</strong> The maximum Annual Percentage Rate (APR) for personal loans available through this platform is {aprMax}%. APR is calculated in accordance with the Truth in Lending Act (TILA), 12 CFR Part 1026, and includes the interest rate plus all applicable fees. Minimum APR: {aprMin}%.</p>
-        <p><strong class="text-foreground/70">Representative Example:</strong> A loan of $5,000 repaid over 36 months at a fixed APR of 14.99% results in 36 monthly payments of $173.17. Total amount repayable: $6,234.12 (including $1,234.12 in interest and fees). Representative APR: 14.99%. Your actual rate will depend on credit score, income, loan amount, loan term, and other factors. Not all applicants will qualify for the lowest rate advertised.</p>
+        <p><strong class="text-foreground/70">Maximum APR:</strong> The maximum Annual Percentage Rate (APR) for payment plans available through this platform is {aprMax}%. APR is calculated in accordance with the Truth in Lending Act (TILA), 12 CFR Part 1026, and includes the interest rate plus all applicable fees. Minimum APR: {aprMin}%.</p>
+        <p><strong class="text-foreground/70">Representative Example:</strong> A care plan of $2,400 repaid over 12 months at a fixed APR of 0% results in 12 equal monthly payments of $200.00. Total amount repayable: $2,400.00. Total interest: $0.00. For plans outside the 0% promotional window: a plan of $2,400 repaid over 18 months at 14.99% APR results in 18 monthly payments of $148.17. Total amount repayable: $2,667.06. Your actual rate depends on credit profile, plan amount, and term selected. Not all applicants will qualify for 0% APR promotional plans.</p>
         <p><strong class="text-foreground/70">No Guarantee of Approval:</strong> Submitting an inquiry or application does not guarantee loan approval or a specific loan offer. All applications are subject to credit review, identity verification, income verification, and lender underwriting criteria. Approval and final loan terms are at the sole discretion of the participating lender.</p>
         <p><strong class="text-foreground/70">Credit Inquiry:</strong> Checking your rate uses a soft credit pull and will not affect your credit score. Proceeding with a full loan application may result in a hard credit inquiry, which may temporarily affect your credit score. State availability, loan terms, rates, and fees vary by lender and are subject to change without notice. Not available in all states.</p>
-        <p><strong class="text-foreground/70">Marketplace Disclosure:</strong> {brand} is not a direct lender. {brand} operates as a loan referral marketplace connecting consumers with a network of third-party lenders. {brand} does not make credit decisions and is not responsible for lender actions or loan terms. {brand} may receive compensation from lenders for referrals, which does not influence the loan terms offered to you. Please review each lender's terms, rates, and fees carefully before accepting any loan offer.</p>
+        <p><strong class="text-foreground/70">Platform Disclosure:</strong> {brand} is a veterinary payment plan platform. {brand} facilitates payment plan options for veterinary care in partnership with licensed financial institutions. {brand} does not guarantee approval or specific plan terms, and plan availability may vary by state. {brand} may receive compensation in connection with plan originations, which does not influence the plan terms offered to you. Please review all plan terms, rates, and fees carefully before confirming any payment plan.</p>
         <p><strong class="text-foreground/70">Risk Warning:</strong> Borrowing money involves financial risk. Failure to repay a loan on time may result in additional fees, negative credit reporting, and collections activity. Only borrow what you can comfortably repay. If you are experiencing financial difficulty, consider contacting a nonprofit credit counseling agency such as the NFCC (nfcc.org) for free guidance.</p>
       </div>
     </div>
@@ -156,7 +156,7 @@ const popupContent: Record<string, { title: string; body: string }> = {
           <span class="font-display font-bold text-foreground text-sm">{brand}</span>
         </div>
         <p class="text-foreground/60 text-xs leading-relaxed max-w-xs mb-4">
-          A loan referral marketplace connecting borrowers with independent lenders offering fixed-rate installment loans. NMLS #123456.
+          A veterinary payment plan platform connecting pet owners with transparent financing options for vet care. NMLS #123456.
         </p>
         <div class="flex items-center gap-1.5 text-foreground/60 text-xs">
           <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="hsl(193 46% 50%)" stroke-width="2" stroke-linecap="round">
@@ -167,7 +167,7 @@ const popupContent: Record<string, { title: string; body: string }> = {
       </div>
 
       {[
-        { heading: 'Loans', links: ['Debt Consolidation', 'Home Improvement', 'Medical Loans'] },
+        { heading: 'Care Plans', links: ['Emergency Vet Care', 'Routine & Preventive Care', 'Specialist & Surgical Care'] },
         { heading: 'Learn', links: ['How It Works', 'Payment Calculator', 'APR & Rates', 'FAQ'] },
         { heading: 'Company', links: ['About Us', 'Privacy Policy', 'Terms of Service', 'Accessibility'] },
       ].map(col => (
