@@ -92,6 +92,33 @@
     transform: none;
   }
 
+  .zip-city-hint {
+    min-height: 1.25rem;
+    font-size: 0.75rem;
+    color: transparent;
+    transition: color 0.2s ease, transform 0.2s ease;
+    transform: translateY(-2px);
+    padding-left: 0.25rem;
+  }
+
+  .zip-city-hint--found {
+    color: hsl(var(--accent));
+    transform: translateY(0);
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+  }
+
+  .zip-city-hint--found::before {
+    content: '';
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: hsl(var(--accent));
+    flex-shrink: 0;
+  }
+
   /* Glass card — crisp white high-contrast aesthetic */
   .glass-card {
     background: hsl(var(--surface) / 0.97);

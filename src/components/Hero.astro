@@ -1,4 +1,6 @@
 ---
+import { ZIP_CITIES } from '../data/zip-cities.ts';
+
 interface Props {
   h1?: string;
   sub?: string;
@@ -105,16 +107,19 @@ const trustItems = [
 
         <div class="relative flex items-center">
           <input
+            id="zip-input"
             type="text"
             inputmode="numeric"
             maxlength="5"
             placeholder="Enter your ZIP code"
+            autocomplete="postal-code"
             class="text-base py-4 px-5 pr-12 rounded-[var(--radius)] border border-border bg-surface text-foreground placeholder-foreground/30 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/30 w-full duration-200"
           />
           <svg class="absolute right-4 pointer-events-none text-foreground/30" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
             <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
           </svg>
         </div>
+        <div id="zip-city-hint" class="zip-city-hint" aria-live="polite" aria-atomic="true"></div>
         <div class="relative">
           <button
             id="hero-cta"
@@ -205,22 +210,20 @@ const trustItems = [
     </div>
   </div>
 
-  <script define:vars={{ redirectUrl }}>
-    var grid = document.getElementById('amount-grid');
-    if (grid) {
-      grid.addEventListener('click', function(e) {
-        var btn = e.target.closest('.amount-btn');
-        if (!btn) return;
-        grid.querySelectorAll('.amount-btn').forEach(function(b) {
-          b.classList.remove('amount-btn--active');
-        });
-        btn.classList.add('amount-btn--active');
-      });
-    }
-
+  <script define:vars={{ redirectUrl, ZIP_CITIES }}>
+    var grid     = document.getElementById('amount-grid');
     var ctaBtn   = document.getElementById('hero-cta');
     var ctaError = document.getElementById('hero-cta-error');
-    var zipInput = document.querySelector('input[placeholder="Enter your ZIP code"]');
+    var zipInput = document.getElementById('zip-input');
+    var cityHint = document.getElementById('zip-city-hint');
+
+    function isValidZip(zip) {
+      return /^\d{5}$/.test(zip);
+    }
+
+    function getCityForZip(zip) {
+      return ZIP_CITIES[zip] || null;
+    }
 
     function showError(msg) {
       if (!ctaError) return;
@@ -234,17 +237,52 @@ const trustItems = [
       ctaError.classList.add('hidden');
     }
 
-    if (ctaBtn && zipInput) {
-      zipInput.addEventListener('input', clearError);
+    function updateCityHint(zip) {
+      if (!cityHint) return;
+      if (zip.length === 5 && /^\d{5}$/.test(zip)) {
+        var city = getCityForZip(zip);
+        if (city) {
+          cityHint.textContent = city;
+          cityHint.className = 'zip-city-hint zip-city-hint--found';
+        } else {
+          cityHint.textContent = '';
+          cityHint.className = 'zip-city-hint';
+        }
+      } else {
+        cityHint.textContent = '';
+        cityHint.className = 'zip-city-hint';
+      }
+    }
 
+    if (grid) {
+      grid.addEventListener('click', function(e) {
+        var btn = e.target.closest('.amount-btn');
+        if (!btn) return;
+        grid.querySelectorAll('.amount-btn').forEach(function(b) {
+          b.classList.remove('amount-btn--active');
+        });
+        btn.classList.add('amount-btn--active');
+      });
+    }
+
+    if (zipInput) {
+      zipInput.addEventListener('input', function() {
+        clearError();
+        var val = zipInput.value.replace(/\D/g, '').slice(0, 5);
+        if (zipInput.value !== val) zipInput.value = val;
+        updateCityHint(val);
+      });
+    }
+
+    if (ctaBtn) {
       ctaBtn.addEventListener('click', function() {
-        var zip = zipInput.value.trim();
+        var zip = zipInput ? zipInput.value.trim() : '';
         var activeAmountBtn = grid ? grid.querySelector('.amount-btn--active') : null;
         var amount = activeAmountBtn ? activeAmountBtn.dataset.amount : '';
 
-        if (!/^\d{5}$/.test(zip)) {
+        if (!isValidZip(zip)) {
           showError('Please enter a valid 5-digit ZIP code.');
-          zipInput.focus();
+          if (zipInput) zipInput.focus();
           return;
         }
 
