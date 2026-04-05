@@ -28,11 +28,11 @@ const redirectUrl = import.meta.env.PUBLIC_REDIRECT_URL || '${redirectUrl}';
         <div>
           <div class="flex justify-between items-end mb-4">
             <label for="amount-slider" class="text-foreground/70 text-xs font-semibold uppercase tracking-widest">Loan Amount</label>
-            <span id="amount-display" class="font-display font-bold text-2xl text-foreground mono-num">$3,000</span>
+            <span id="amount-display" class="font-display font-bold text-2xl text-foreground mono-num">$5,000</span>
           </div>
           <input id="amount-slider" type="range"
-            min={amountMin} max={amountMax} step="100" value="3000"
-            class="range-slider w-full" style="--progress: 50%" />
+            min={amountMin} max={amountMax} step="100" value="5000"
+            class="range-slider w-full" style="--progress: 100%" />
           <div class="flex justify-between text-foreground/55 text-xs mt-2">
             <span>${amountMin.toLocaleString()}</span>
             <span>${amountMax.toLocaleString()}</span>

@@ -1,9 +1,16 @@
 ---
 import '../styles/global.css';
+import ConsentBanner from '../components/ConsentBanner.astro';
 
 const brand = import.meta.env.PUBLIC_BRAND || '${brand}';
 const conversionId = import.meta.env.PUBLIC_CONVERSION_ID || '${conversionId}';
 const siteUrl = import.meta.env.PUBLIC_SITE_URL || '${siteUrl}';
+const aprMin = import.meta.env.PUBLIC_APRMIN || '5.99';
+const aprMax = import.meta.env.PUBLIC_APRMAX || '34.99';
+const amtMin = import.meta.env.PUBLIC_AMOUNTMIN || '200';
+const amtMax = import.meta.env.PUBLIC_AMOUNTMAX || '5000';
+const phone  = import.meta.env.PUBLIC_PHONE || '';
+const email  = import.meta.env.PUBLIC_EMAIL || '';
 
 interface Props {
   title?: string;
@@ -66,6 +73,33 @@ const canonicalUrl = siteUrl;
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@700;800&display=swap" />
   </noscript>
 
+  <script is:inline define:vars={{ brand, siteUrl, aprMin, aprMax, amtMin, amtMax, phone, email }}>
+    const jsonLd = [
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": brand,
+        "url": siteUrl,
+        "telephone": phone,
+        "email": email,
+        "sameAs": [siteUrl],
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "LoanOrCredit",
+        "name": brand + " Veterinary Installment Loan",
+        "loanTerm": { "@type": "QuantitativeValue", "minValue": 2, "maxValue": 60, "unitCode": "MON" },
+        "amount": { "@type": "MonetaryAmount", "minValue": amtMin, "maxValue": amtMax, "currency": "USD" },
+        "annualPercentageRate": { "@type": "QuantitativeValue", "minValue": aprMin, "maxValue": aprMax },
+        "provider": { "@type": "Organization", "name": brand, "url": siteUrl },
+      },
+    ];
+    const s = document.createElement('script');
+    s.type = 'application/ld+json';
+    s.text = JSON.stringify(jsonLd);
+    document.head.appendChild(s);
+  </script>
+
   <script is:inline define:vars={{ conversionId }}>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
@@ -90,5 +124,6 @@ const canonicalUrl = siteUrl;
 </head>
 <body class="bg-background text-foreground antialiased">
   <slot />
+  <ConsentBanner />
 </body>
 </html>

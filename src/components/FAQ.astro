@@ -47,6 +47,16 @@ const faqs = [
 ];
 ---
 
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(f => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a }
+  }))
+})} />
+
 <section id="faq" class="py-20 md:py-28 px-6">
   <div class="max-w-6xl mx-auto">
 
