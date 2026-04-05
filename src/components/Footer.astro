@@ -11,47 +11,47 @@ const redirectUrl = import.meta.env.PUBLIC_REDIRECT_URL || '${redirectUrl}';
 const popupContent: Record<string, { title: string; body: string }> = {
   'Debt Consolidation': {
     title: 'Debt Consolidation',
-    body: 'Combine multiple high-interest debts into one simple monthly payment. Many borrowers reduce their overall interest cost significantly by consolidating credit cards and other loans.',
+    body: 'If you carry balances on multiple accounts with varying interest rates, consolidating them into a single fixed-rate installment loan can simplify your monthly obligations and may reduce the total interest you pay over time. A fixed monthly payment means you always know exactly what is due and when.',
   },
   'Home Improvement': {
     title: 'Home Improvement',
-    body: 'Finance repairs, renovations, or upgrades without tapping into your home equity. Fixed monthly payments make it easy to budget for your project from start to finish.',
+    body: 'An installment loan lets you fund repairs, renovations, or upgrades without using home equity or drawing from savings. Your payment amount stays the same every month for the full term, making it straightforward to incorporate into your household budget from day one.',
   },
   'Medical Loans': {
     title: 'Medical Loans',
-    body: 'Cover unexpected medical expenses with a fixed-rate loan. We work with borrowers across a wide credit spectrum and offer same-day funding in most cases.',
+    body: 'Unexpected health expenses can arrive without warning. An installment loan provides a defined amount at a fixed rate, giving you a clear repayment timeline rather than an open-ended balance. Lenders in our network evaluate applicants across a range of credit profiles, and funding typically occurs within one business day of signing.',
   },
   'How It Works': {
     title: 'How It Works',
-    body: '1. Check your rate in minutes with no impact to your credit score.\n2. Review your personalized offers and choose the best fit.\n3. Sign your documents electronically.\n4. Receive funds directly in your bank account — often the same day.',
+    body: 'Step 1 — Enter your loan amount and ZIP code to begin a soft-inquiry rate check that does not affect your credit score.\nStep 2 — Review the offers returned by lenders in our network, including rate, term, and monthly payment.\nStep 3 — Accept the offer that fits your budget and complete e-signature on your loan agreement.\nStep 4 — Your lender initiates a direct deposit to your bank account, typically arriving by the next business morning.',
   },
   'Payment Calculator': {
     title: 'Payment Calculator',
-    body: 'Use our interactive calculator to estimate your monthly payment. Adjust the loan amount, term, and APR to see how different scenarios affect your budget before you apply.',
+    body: 'Our on-page calculator lets you adjust loan amount, repayment term, and estimated APR to see the resulting monthly payment before you apply. Use it to identify the combination that fits comfortably within your monthly budget. Remember that your actual rate will depend on lender underwriting and your credit profile.',
   },
   'APR & Rates': {
     title: 'APR & Rates',
-    body: `Rates range from ${aprMin}% to ${aprMax}% APR based on creditworthiness and loan term. Rates are fixed for the life of the loan — your payment will never change. No hidden fees or prepayment penalties.`,
+    body: `Rates available through our marketplace range from ${aprMin}% to ${aprMax}% APR. Your specific rate is determined by the lender based on your credit score, income, requested amount, and repayment term. All rates are fixed — your payment amount will not change during the life of the loan. No prepayment penalties apply.`,
   },
   'FAQ': {
-    title: 'Frequently Asked Questions',
-    body: 'Q: Will checking my rate hurt my credit?\nA: No. Rate checks use a soft inquiry.\n\nQ: How fast can I receive funds?\nA: As fast as same business day after approval.\n\nQ: Are there prepayment penalties?\nA: Never. Pay off early at no cost.',
+    title: 'Common Questions',
+    body: 'Q: Does checking my rate hurt my credit?\nA: No. Rate checks use a soft inquiry with no impact to your score.\n\nQ: When do I receive the funds?\nA: Most borrowers see the deposit within one business day of signing.\n\nQ: Is there a penalty for paying early?\nA: No. You may pay off the balance at any time at no additional cost.\n\nQ: What if no lender makes me an offer?\nA: You will be notified clearly and may reapply at a later date.',
   },
   'About Us': {
     title: 'About Us',
-    body: `${brand} connects borrowers with a network of trusted lenders to deliver competitive fixed-rate personal loans. Our mission is to make borrowing transparent, fast, and fair for everyone.`,
+    body: `${brand} is an online loan referral marketplace that connects consumers with a network of independent, licensed lenders offering fixed-rate installment loans. We do not make credit decisions or set loan terms — our role is to present you with offers from lenders who are willing to work with your financial profile, so you can compare and choose what makes sense for you.`,
   },
   'Privacy Policy': {
     title: 'Privacy Policy',
-    body: 'We collect only the information necessary to process your loan application. Your data is encrypted, never sold to third parties, and stored in compliance with applicable federal and state privacy laws. You may request deletion of your data at any time.',
+    body: 'We collect only the information needed to process your rate inquiry and match you with lenders. Your data is encrypted in transit using TLS 1.3 and encrypted at rest. We do not sell your personal information to advertisers or unaffiliated third parties. You may request access to or deletion of your data at any time by contacting our support team.',
   },
   'Terms of Service': {
     title: 'Terms of Service',
-    body: `By using ${brand}, you agree to our terms governing loan applications, rate inquiries, and communications. ${brand} operates as a loan marketplace. Loan approval and terms are determined by individual lenders. All loans subject to credit review.`,
+    body: `By submitting an inquiry through ${brand}, you acknowledge that ${brand} operates as a loan referral marketplace and is not a direct lender. All loan approval decisions, interest rates, and repayment terms are determined solely by the participating lender. ${brand} does not guarantee approval or specific loan terms. Submitting a request does not constitute a loan application or a binding agreement.`,
   },
   'Accessibility': {
     title: 'Accessibility',
-    body: `${brand} is committed to ensuring digital accessibility for people with disabilities. We continually improve the user experience for everyone and apply relevant accessibility standards. Contact us at ${email} if you encounter barriers.`,
+    body: `${brand} is committed to providing a website experience that is accessible to all users, including those using assistive technologies. We follow WCAG 2.1 guidelines and continuously evaluate our pages for compliance. If you encounter any difficulty accessing content or completing a task on our site, please contact us at ${email} and we will work to resolve the issue promptly.`,
   },
 };
 ---
@@ -85,15 +85,15 @@ const popupContent: Record<string, { title: string; body: string }> = {
   <div class="max-w-6xl mx-auto">
     <div class="premium-card p-10 md:p-14 text-center relative overflow-hidden">
       <div class="absolute inset-0 pointer-events-none prefooter-glow"></div>
-      <span class="section-label relative">Competitive Rates Available</span>
+      <span class="section-label relative">Fixed Rates. No Surprises.</span>
       <h2 class="font-display font-bold text-3xl md:text-4xl text-foreground relative mb-4">
-        Your Best Rate Is Waiting
+        Find Out What Rate You Qualify For
       </h2>
       <p class="text-foreground/70 text-base max-w-xl mx-auto mb-8 relative">
-        Check your rate in 3 minutes with no impact to your credit score. Join 50,000+ borrowers who chose {brand}.
+        A soft credit check takes about 3 minutes and leaves your score untouched. Over 50,000 borrowers have used our marketplace to find a loan that fit their budget.
       </p>
       <a href={redirectUrl} class="btn-primary text-base py-4 px-10 relative">
-        Get My Rate Now — It's Free
+        See My Rate Options — No Cost
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
           <path d="M5 12h14M12 5l7 7-7 7"/>
         </svg>
@@ -102,10 +102,10 @@ const popupContent: Record<string, { title: string; body: string }> = {
       <!-- Trust row -->
       <div class="flex flex-wrap justify-center gap-6 mt-8 text-foreground/60 text-xs">
         {[
-          'No hard credit pull to check rate',
-          'Funds as fast as same day',
-          'Fixed monthly payments',
-          'No prepayment penalties',
+          'Soft inquiry only — score unaffected',
+          'Direct deposit as fast as same business day',
+          'Fixed payment amount for every month',
+          'Pay off early at no additional cost',
         ].map(item => (
           <div class="flex items-center gap-1.5">
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="hsl(193 46% 50%)" stroke-width="2.5" stroke-linecap="round">
@@ -156,7 +156,7 @@ const popupContent: Record<string, { title: string; body: string }> = {
           <span class="font-display font-bold text-foreground text-sm">{brand}</span>
         </div>
         <p class="text-foreground/60 text-xs leading-relaxed max-w-xs mb-4">
-          Installment loans with fixed payments and transparent terms. NMLS #123456.
+          A loan referral marketplace connecting borrowers with independent lenders offering fixed-rate installment loans. NMLS #123456.
         </p>
         <div class="flex items-center gap-1.5 text-foreground/60 text-xs">
           <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="hsl(193 46% 50%)" stroke-width="2" stroke-linecap="round">

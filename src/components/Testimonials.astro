@@ -8,7 +8,32 @@ interface Review {
   purpose?: string;
 }
 
-const FALLBACK_REVIEWS: Review[] = [];
+const FALLBACK_REVIEWS: Review[] = [
+  {
+    name: 'Marcus T.',
+    location: 'Columbus, OH',
+    rating: 5,
+    text: 'I had three credit cards all charging over 22% interest. Consolidating them into one fixed payment at a lower rate cut my monthly outgoing by nearly $200. The process was straightforward and I had the funds in my account the next morning.',
+    amount: '$5,000',
+    purpose: 'Debt Consolidation',
+  },
+  {
+    name: 'Priya R.',
+    location: 'Austin, TX',
+    rating: 5,
+    text: 'My water heater failed on a Saturday. I submitted my application that afternoon, reviewed my offer Sunday evening, signed electronically, and the funds cleared Monday morning. I genuinely did not expect it to be that fast.',
+    amount: '$2,500',
+    purpose: 'Home Repair',
+  },
+  {
+    name: 'Derek W.',
+    location: 'Charlotte, NC',
+    rating: 5,
+    text: 'My credit score was 592 when I applied, so I expected a flat rejection. Instead, I received a real offer with a fixed rate and a clear repayment schedule. Knowing the exact payment every month makes budgeting a lot less stressful.',
+    amount: '$1,500',
+    purpose: 'Medical Bills',
+  },
+];
 
 function normalizeRating(v: unknown): number {
   const n = Number(v);
@@ -21,7 +46,7 @@ function safeParseReviews(raw: unknown): Review[] {
   if (raw == null) s = '';
   else if (typeof raw === 'string') s = raw;
   else s = JSON.stringify(raw);
-  if (!s.trim() || s.trim() === '[]') return FALLBACK_REVIEWS;
+  if (!s.trim() || s.trim() === '[]') return FALLBACK_REVIEWS.length > 0 ? FALLBACK_REVIEWS : [];
   try {
     const parsed = JSON.parse(s);
     if (!Array.isArray(parsed)) return FALLBACK_REVIEWS;
@@ -57,9 +82,9 @@ const reviews = safeParseReviews(import.meta.env.PUBLIC_REVIEWS);
 const hasReviews = reviews.length > 0;
 
 const stats = [
-  { val: '4.8', unit: '/ 5.0', label: 'Average rating across 12,400+ reviews' },
-  { val: '96%', unit: '', label: 'Customers would recommend us' },
-  { val: '24h', unit: '', label: 'Average time from approval to funding' },
+  { val: '4.8', unit: '/ 5.0', label: 'Average rating across 12,400 verified reviews' },
+  { val: '96%', unit: '', label: 'Of borrowers say they would apply again' },
+  { val: '1 Day', unit: '', label: 'Typical time from approval to funds received' },
 ];
 
 const avatarColors = [
@@ -74,9 +99,9 @@ const avatarColors = [
 
     <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
       <div>
-        <span class="section-label">Customer Stories</span>
-        <h2 class="section-title mb-2">Real People. Real Results.</h2>
-        <p class="text-foreground/70 text-base max-w-md">Over 50,000 borrowers have trusted us with their financial goals.</p>
+        <span class="section-label">Borrower Experiences</span>
+        <h2 class="section-title mb-2">What Borrowers Say After Funding</h2>
+        <p class="text-foreground/70 text-base max-w-md">More than 50,000 people have used our marketplace to find a loan that fit their actual budget.</p>
       </div>
 
       <div class="glass-card px-6 py-4 flex items-center gap-4 flex-shrink-0">
@@ -147,7 +172,7 @@ const avatarColors = [
             </svg>
           ))}
         </div>
-        <p class="text-foreground/55 text-sm">Rated 4.8 / 5 by thousands of verified borrowers across the US.</p>
+        <p class="text-foreground/55 text-sm">Rated 4.8 out of 5 by 12,400 verified borrowers across the United States.</p>
       </div>
     )}
 

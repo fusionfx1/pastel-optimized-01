@@ -6,35 +6,43 @@ const phone  = import.meta.env.PUBLIC_PHONE  || '${phone}';
 const faqs = [
   {
     q: 'Will checking my rate affect my credit score?',
-    a: 'No. When you check your rate, we perform a soft credit inquiry that has zero impact on your credit score. Only when you accept a loan offer and proceed to final approval do we conduct a hard inquiry, which may temporarily affect your score by a few points.',
+    a: 'Checking your rate triggers a soft inquiry, which lenders and bureaus treat differently from a credit application — it leaves no mark on your score. A hard inquiry only occurs if you choose to move forward with a specific lender offer and authorize a full application.',
   },
   {
-    q: 'How long does it take to receive funds?',
-    a: 'Most borrowers receive their funds within 1 business day of signing their loan agreement. Some lenders in our network offer same-day funding depending on your bank\'s processing times. Applications submitted and approved before 2pm EST are typically funded the next business morning.',
+    q: 'How quickly will the money reach my bank account?',
+    a: 'After you sign your loan agreement, most lenders in our network initiate the transfer within hours. The funds typically appear in your account the next business morning. Applications completed and signed before 2pm EST on a business day have the highest likelihood of same-day or next-morning funding.',
   },
   {
-    q: 'What can I use the loan for?',
-    a: 'Our installment loans can be used for virtually any legitimate purpose: debt consolidation, medical expenses, home improvement, car repairs, weddings, vacations, education expenses, or any personal financial need. Funds cannot be used for illegal activities or business start-up costs on certain products.',
+    q: 'What can I use the installment loan for?',
+    a: 'Borrowers on our platform commonly use funds for debt consolidation, medical and dental bills, car repairs, home maintenance, moving expenses, and other planned or unexpected costs. Each lender sets its own acceptable use policy, which will be outlined in your loan agreement prior to signing.',
   },
   {
-    q: 'Are there prepayment penalties?',
-    a: 'No. You can pay off your loan early at any time without penalty. Early payoff reduces the total interest you pay since interest accrues on your outstanding principal balance. Many borrowers choose to make extra payments to save on interest costs.',
+    q: 'Can I pay off my loan before the term ends?',
+    a: 'Yes, and it costs you nothing extra. Paying off your balance early reduces the total interest you owe because interest is calculated on the remaining principal. There are no prepayment penalties on any loan offered through our marketplace.',
   },
   {
-    q: 'What credit score do I need to qualify?',
-    a: 'We work with credit scores as low as 560. While a higher credit score typically results in a lower APR, we evaluate your full financial picture — including income, employment history, and debt-to-income ratio. Applicants with limited credit history are also welcome to apply.',
+    q: 'What credit score is required to apply?',
+    a: 'Lenders in our network consider applicants with credit scores starting at 560. Your score is one factor among several — income stability, existing debt obligations, and employment history also influence the offer you receive. Applicants who are rebuilding credit are welcome to apply.',
   },
   {
-    q: 'What APR will I receive?',
-    a: `Your APR is personalised based on your credit profile, income, requested loan amount, and term. Rates range from ${aprMin}% to ${aprMax}% APR. The rate you see during the application process is the rate you'll receive — we don't change it after approval.`,
+    q: 'How is my APR determined?',
+    a: `Lenders calculate your rate based on your credit score, verifiable income, the loan amount you request, and the repayment term you choose. Rates through our marketplace range from ${aprMin}% to ${aprMax}% APR. The rate presented in your offer is the rate locked into your agreement — it does not change after you sign.`,
   },
   {
-    q: 'Is there an origination fee?',
-    a: 'Many loans in our network have no origination fee. For loans where a fee applies, it will be clearly disclosed in your loan agreement before you sign. We never add hidden fees after you accept an offer.',
+    q: 'Are there origination or application fees?',
+    a: 'Many lenders in our network charge no origination fee. When a fee does apply, it is stated clearly in the loan terms before you accept any offer. We do not charge application fees and do not add fees on our end — any cost you see comes directly from the lender and is disclosed before you commit.',
   },
   {
-    q: 'How do monthly payments work?',
-    a: 'Payments are fixed for the entire loan term — the same amount every month, on the same date. Payments are automatically debited from your bank account, so you never miss a due date. You\'ll receive a full amortization schedule at closing showing exactly how each payment is applied.',
+    q: 'How do fixed monthly payments work?',
+    a: 'Your payment amount is set at closing and stays the same for every month of your loan term. Most lenders collect payments via ACH debit from your bank account on a date you confirm when you sign. You receive a complete amortization schedule showing exactly how each payment divides between principal and interest.',
+  },
+  {
+    q: 'What happens if my application is not approved?',
+    a: 'If no lender in our network is able to extend an offer based on your current profile, you will receive a clear notification. We encourage you to review your credit report for any errors, reduce existing balances if possible, and reapply when your financial picture has improved. There is no penalty for applying.',
+  },
+  {
+    q: 'How does a loan marketplace differ from a direct lender?',
+    a: 'A direct lender funds the loan itself. A marketplace like ours connects you to a network of independent lenders and presents you with the offers they generate based on your profile. You choose which offer to accept — or none. This means you can compare multiple options in one place without submitting separate applications to each lender.',
   },
 ];
 ---
@@ -45,10 +53,10 @@ const faqs = [
     <div class="grid md:grid-cols-[380px_1fr] gap-14 items-start">
       <!-- Left: sticky -->
       <div class="md:sticky md:top-24">
-        <span class="section-label">Got Questions?</span>
+        <span class="section-label">Common Questions</span>
         <h2 class="section-title">Frequently Asked Questions</h2>
         <p class="text-foreground/70 text-base leading-relaxed mb-8">
-          Everything you need to know before you apply. Still have questions? Our team is here to help.
+          Straight answers to the questions most borrowers ask before they apply. If something is not covered here, our team is available by phone.
         </p>
 
         <div class="glass-card p-5 flex gap-4 items-center">

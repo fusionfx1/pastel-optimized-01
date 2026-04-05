@@ -2,12 +2,12 @@
 const redirectUrl = import.meta.env.PUBLIC_REDIRECT_URL || '${redirectUrl}';
 
 const requirements = [
-  { title: 'Age 18 or older',       desc: 'Must be a legal adult to enter a loan agreement.', icon: '01', color: 'hsl(193 46% 50%)' },
-  { title: 'U.S. Residency',        desc: 'U.S. citizen or permanent resident with a valid SSN.', icon: '02', color: 'hsl(338 55% 62%)' },
-  { title: 'Verifiable Income',     desc: 'Employment, self-employment, pension, or other regular income.', icon: '03', color: 'hsl(130 42% 50%)' },
-  { title: 'Active Bank Account',   desc: 'Checking or savings account for direct deposit.', icon: '04', color: 'hsl(193 46% 50%)' },
-  { title: 'Credit Score 560+',     desc: 'We work with a range of credit histories.', icon: '05', color: 'hsl(338 55% 62%)' },
-  { title: 'Valid Contact Info',    desc: 'Working email and phone number for verification.', icon: '06', color: 'hsl(130 42% 50%)' },
+  { title: 'Age 18 or older',       desc: 'You must be a legal adult to enter into a loan agreement in any U.S. state.', icon: '01', color: 'hsl(193 46% 50%)' },
+  { title: 'U.S. Residency',        desc: 'Must be a U.S. citizen or permanent resident with a valid Social Security Number.', icon: '02', color: 'hsl(338 55% 62%)' },
+  { title: 'Verifiable Income',     desc: 'Regular income from employment, self-employment, pension, disability, or other documented sources.', icon: '03', color: 'hsl(130 42% 50%)' },
+  { title: 'Active Bank Account',   desc: 'A checking or savings account at a U.S. bank or credit union for direct deposit of funds.', icon: '04', color: 'hsl(193 46% 50%)' },
+  { title: 'Credit Score 560+',     desc: 'Lenders in our network consider applicants across a range of credit histories, starting at 560.', icon: '05', color: 'hsl(338 55% 62%)' },
+  { title: 'Reachable Contact Info', desc: 'A working email address and phone number for identity verification and lender communication.', icon: '06', color: 'hsl(130 42% 50%)' },
 ];
 ---
 
@@ -17,16 +17,16 @@ const requirements = [
     <div class="grid md:grid-cols-2 gap-14 items-center">
       <!-- Left -->
       <div>
-        <span class="section-label">Who Qualifies</span>
+        <span class="section-label">Do You Qualify?</span>
         <h2 class="section-title">Eligibility Requirements</h2>
         <p class="text-foreground/70 text-base leading-relaxed mb-8">
-          Our criteria are designed to be inclusive. If you have a stable income and a bank account, you likely qualify.
+          Lenders on our platform serve a broad range of borrowers. If you have consistent income and a bank account, there is a good chance you qualify.
         </p>
 
         <div class="premium-card p-6 mb-8">
-          <h3 class="font-display font-bold text-foreground text-base mb-5">Quick Self-Check</h3>
+          <h3 class="font-display font-bold text-foreground text-base mb-5">30-Second Self-Check</h3>
           <div class="space-y-3">
-            {['Age 18+', 'U.S. resident or citizen', 'Regular, verifiable income', 'Active bank account'].map(item => (
+            {['18 years of age or older', 'U.S. citizen or permanent resident', 'Consistent, documentable income', 'Open checking or savings account'].map(item => (
               <div class="flex items-center gap-3">
                 <div class="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0"
                   style="background: hsl(193 46% 60% / 0.14);">
@@ -39,12 +39,12 @@ const requirements = [
             ))}
           </div>
           <div class="mt-5 pt-4 border-t border-border">
-            <p class="text-foreground/60 text-xs">If you checked all four, you're likely eligible. Your exact rate depends on credit profile and income.</p>
+            <p class="text-foreground/60 text-xs">Tick all four and you meet the baseline criteria. Your actual rate and offer depend on your credit score, income level, and the lender's underwriting guidelines.</p>
           </div>
         </div>
 
         <a href={redirectUrl} class="btn-primary inline-flex">
-          Check My Eligibility — Free
+          Check My Eligibility at No Cost
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
             <path d="M5 12h14M12 5l7 7-7 7"/>
           </svg>
