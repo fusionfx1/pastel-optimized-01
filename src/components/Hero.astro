@@ -242,15 +242,20 @@ const trustItems = [
       if (zip.length === 5 && /^\d{5}$/.test(zip)) {
         var city = getCityForZip(zip);
         if (city) {
-          cityHint.textContent = city;
-          cityHint.className = 'zip-city-hint zip-city-hint--found';
+          cityHint.textContent = '\u2713 ' + city;
+          cityHint.style.color = '#2a7f72';
+          cityHint.style.opacity = '1';
+          cityHint.style.fontWeight = '600';
+          cityHint.style.fontSize = '0.8rem';
         } else {
           cityHint.textContent = '';
-          cityHint.className = 'zip-city-hint';
+          cityHint.style.color = 'transparent';
+          cityHint.style.opacity = '0';
         }
       } else {
         cityHint.textContent = '';
-        cityHint.className = 'zip-city-hint';
+        cityHint.style.color = 'transparent';
+        cityHint.style.opacity = '0';
       }
     }
 
