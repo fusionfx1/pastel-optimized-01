@@ -4,11 +4,11 @@ const aprMax = import.meta.env.PUBLIC_APRMAX || '${aprMax}';
 const redirectUrl = import.meta.env.PUBLIC_REDIRECT_URL || '${redirectUrl}';
 
 const rows = [
-  { credit: 'Excellent', score: '750+',    apr: '5.99–9.99%',   example: '$10,000 / 60mo = $188/mo', total: '$11,283',  highlight: true  },
-  { credit: 'Good',      score: '700–749', apr: '10.99–14.99%', example: '$10,000 / 60mo = $217/mo', total: '$13,028',  highlight: false },
-  { credit: 'Fair',      score: '660–699', apr: '15.99–19.99%', example: '$10,000 / 60mo = $243/mo', total: '$14,580',  highlight: false },
-  { credit: 'Average',   score: '620–659', apr: '20.99–24.99%', example: '$10,000 / 60mo = $269/mo', total: '$16,132',  highlight: false },
-  { credit: 'Poor',      score: '560–619', apr: '25.99–34.99%', example: '$10,000 / 60mo = $304/mo', total: '$18,247',  highlight: false },
+  { credit: 'Excellent', score: '750+',    apr: '5.99–9.99%',   example: '$5,000 / 60mo = $97/mo',  total: '$5,810',  highlight: true  },
+  { credit: 'Good',      score: '700–749', apr: '10.99–14.99%', example: '$5,000 / 60mo = $109/mo', total: '$6,514',  highlight: false },
+  { credit: 'Fair',      score: '660–699', apr: '15.99–19.99%', example: '$5,000 / 60mo = $122/mo', total: '$7,290',  highlight: false },
+  { credit: 'Average',   score: '620–659', apr: '20.99–24.99%', example: '$5,000 / 60mo = $134/mo', total: '$8,066',  highlight: false },
+  { credit: 'Poor',      score: '560–619', apr: '25.99–34.99%', example: '$5,000 / 60mo = $152/mo', total: '$9,124',  highlight: false },
 ];
 ---
 
@@ -50,7 +50,7 @@ const rows = [
             <circle cx="12" cy="12" r="10"/><path d="M12 8v4"/><path d="M12 16h.01"/>
           </svg>
           <p class="text-foreground/70 text-xs leading-relaxed">
-            <strong class="text-foreground/70">Representative APR {aprMin}%–{aprMax}%.</strong> The Representative APR is based on a loan of $10,000 over 60 months. Not all applicants will receive the representative rate; your actual rate depends on individual circumstances.
+            <strong class="text-foreground/70">Representative APR {aprMin}%–{aprMax}%.</strong> The Representative APR is based on a loan of $5,000 over 60 months. Not all applicants will receive the representative rate; your actual rate depends on individual circumstances.
           </p>
         </div>
       </div>
@@ -97,7 +97,7 @@ const rows = [
           </table>
 
           <div class="px-5 py-4" style="background: hsl(193 30% 93%);">
-            <p class="text-foreground/60 text-xs">Example based on $10,000 loan over 60 months. Representative APR {aprMin}%. Total amount repayable varies by rate.</p>
+            <p class="text-foreground/60 text-xs">Example based on $5,000 loan over 60 months. Representative APR {aprMin}%. Total amount repayable varies by rate.</p>
           </div>
         </div>
 
