@@ -110,28 +110,38 @@ const description = import.meta.env.PUBLIC_META_DESCRIPTION || `Compare fixed-ra
       let ticking = false;
       let cachedThreshold = 0;
 
-      const ro = new ResizeObserver(() => {
-        cachedThreshold = document.documentElement.scrollHeight * 0.25;
-      });
+      function updateThreshold() {
+        const vh = window.innerHeight;
+        cachedThreshold = vh * 0.25;
+      }
+
+      const ro = new ResizeObserver(updateThreshold);
       ro.observe(document.documentElement);
-      cachedThreshold = document.documentElement.scrollHeight * 0.25;
+      updateThreshold();
 
       const barLinks = bar.querySelectorAll('a');
 
+      function showBar() {
+        bar.style.transform = 'translateY(0)';
+        bar.removeAttribute('aria-hidden');
+        barLinks.forEach(function(a) { a.removeAttribute('tabindex'); });
+        document.body.classList.add('sticky-bar-active');
+        shown = true;
+      }
+
+      function hideBar() {
+        bar.style.transform = 'translateY(100%)';
+        bar.setAttribute('aria-hidden', 'true');
+        barLinks.forEach(function(a) { a.setAttribute('tabindex', '-1'); });
+        document.body.classList.remove('sticky-bar-active');
+        shown = false;
+      }
+
       function check() {
-        const threshold = cachedThreshold;
-        if (window.scrollY >= threshold && !shown) {
-          bar.style.transform = 'translateY(0)';
-          bar.removeAttribute('aria-hidden');
-          barLinks.forEach(a => a.removeAttribute('tabindex'));
-          document.body.classList.add('sticky-bar-active');
-          shown = true;
-        } else if (window.scrollY < threshold && shown) {
-          bar.style.transform = 'translateY(100%)';
-          bar.setAttribute('aria-hidden', 'true');
-          barLinks.forEach(a => a.setAttribute('tabindex', '-1'));
-          document.body.classList.remove('sticky-bar-active');
-          shown = false;
+        if (window.scrollY >= cachedThreshold && !shown) {
+          showBar();
+        } else if (window.scrollY < cachedThreshold && shown) {
+          hideBar();
         }
         ticking = false;
       }
@@ -143,7 +153,11 @@ const description = import.meta.env.PUBLIC_META_DESCRIPTION || `Compare fixed-ra
         }
       }, { passive: true });
 
-      check();
+      if (document.readyState === 'complete') {
+        check();
+      } else {
+        window.addEventListener('load', check, { once: true });
+      }
     })();
   </script>
 </Layout>
