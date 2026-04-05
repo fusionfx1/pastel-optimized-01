@@ -8,31 +8,31 @@
   --color-accent: ${accentColor};
 }
 
-/* ─── Pastel Dreamscape Palette ────────────────────────────────────────────── */
+/* ─── Crisp Red & White Palette ─────────────────────────────────────────────── */
 :root {
-  /* Baby Blue — calm, trustworthy, fresh */
-  --primary: 193 46% 60%;
+  /* Strong Red — urgent, action-driven */
+  --primary: 5 62% 46%;
 
-  /* Blush Rose surface — soft, warm, approachable */
-  --secondary: 338 70% 91%;
+  /* Blush Red tint — light, airy complement */
+  --secondary: 5 80% 96%;
 
-  /* Pistachio — gentle, growth, wellness */
-  --accent: 130 42% 82%;
+  /* Dark Teal — trust anchor, contrast accent */
+  --accent: 177 46% 32%;
 
-  /* Creamy Peach background — warm, airy, inviting */
-  --background: 28 100% 97%;
+  /* Pure White background — clean, high-contrast */
+  --background: 0 0% 100%;
 
-  /* Deep Rose-tinted charcoal — readable, gentle */
-  --foreground: 220 20% 25%;
+  /* Near Black — maximum readability */
+  --foreground: 0 0% 10%;
 
-  /* Pure soft white card surface */
+  /* Pure white card surface */
   --surface: 0 0% 100%;
 
-  /* Muted blue-grey text */
-  --muted: 215 16% 55%;
+  /* Neutral mid-grey text */
+  --muted: 0 0% 46%;
 
-  /* Soft rose border */
-  --border: 338 30% 88%;
+  /* Light grey border */
+  --border: 0 0% 88%;
 
   --radius: 0.875rem;
 }
@@ -73,33 +73,33 @@
   }
 
   .amount-btn:hover {
-    background: hsl(193 46% 60% / 0.08);
-    border-color: hsl(193 46% 60% / 0.45);
+    background: hsl(5 62% 46% / 0.08);
+    border-color: hsl(5 62% 46% / 0.45);
     color: hsl(var(--foreground));
     transform: translateY(-1px);
     transition: transform 0.2s ease;
   }
 
   .amount-btn--active {
-    background: hsl(193 46% 60% / 0.12);
-    border-color: hsl(193 46% 60% / 0.55);
-    color: hsl(193 46% 38%);
+    background: hsl(5 62% 46% / 0.12);
+    border-color: hsl(5 62% 46% / 0.55);
+    color: hsl(5 62% 30%);
     font-weight: 700;
-    box-shadow: 0 0 0 1px hsl(193 46% 60% / 0.25);
+    box-shadow: 0 0 0 1px hsl(5 62% 46% / 0.25);
   }
 
   .amount-btn--active:hover {
     transform: none;
   }
 
-  /* Glass card — soft pastel dreamscape aesthetic */
+  /* Glass card — crisp white high-contrast aesthetic */
   .glass-card {
     background: hsl(var(--surface) / 0.97);
     border: 1px solid hsl(var(--border) / 1);
     border-radius: var(--radius);
     box-shadow:
       0 1px 0 0 rgba(255,255,255,0.9) inset,
-      0 4px 24px rgba(174, 217, 224, 0.15);
+      0 4px 24px rgba(0, 0, 0, 0.06);
   }
 
   @media (min-width: 768px) {
@@ -110,17 +110,17 @@
     }
   }
 
-  /* Elevated card with baby blue top accent */
+  /* Elevated card with red top accent */
   .premium-card {
     background: linear-gradient(
       160deg,
-      hsl(28 60% 98%) 0%,
-      hsl(193 30% 96%) 100%
+      hsl(0 0% 100%) 0%,
+      hsl(5 80% 98%) 100%
     );
     border: 1px solid hsl(var(--border) / 1);
-    border-top: 2px solid hsl(193 46% 60% / 0.4);
+    border-top: 2px solid hsl(5 62% 46% / 0.4);
     border-radius: var(--radius);
-    box-shadow: 0 8px 32px rgba(174, 217, 224, 0.18), inset 0 1px 0 rgba(255,255,255,0.95);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06), inset 0 1px 0 rgba(255,255,255,0.95);
   }
 
   /* Stat chip */
@@ -135,7 +135,7 @@
     justify-content: center;
     gap: 0.5rem;
     padding: 0.875rem 2rem;
-    background: linear-gradient(135deg, hsl(193 46% 58%), hsl(193 50% 44%));
+    background: linear-gradient(135deg, hsl(5 62% 52%), hsl(5 62% 40%));
     color: hsl(0 0% 100%);
     font-family: 'Plus Jakarta Sans', sans-serif;
     font-weight: 700;
@@ -143,7 +143,7 @@
     border-radius: var(--radius);
     letter-spacing: 0.01em;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-    box-shadow: 0 4px 20px hsl(193 46% 60% / 0.35), inset 0 1px 0 rgba(255,255,255,0.25);
+    box-shadow: 0 4px 20px hsl(5 62% 46% / 0.35), inset 0 1px 0 rgba(255,255,255,0.25);
     white-space: nowrap;
     cursor: pointer;
     text-decoration: none;
@@ -152,8 +152,8 @@
 
   .btn-primary:hover {
     transform: translateY(-1px);
-    box-shadow: 0 8px 28px hsl(193 46% 60% / 0.45), inset 0 1px 0 rgba(255,255,255,0.3);
-    background: linear-gradient(135deg, hsl(193 50% 62%), hsl(193 52% 48%));
+    box-shadow: 0 8px 28px hsl(5 62% 46% / 0.45), inset 0 1px 0 rgba(255,255,255,0.3);
+    background: linear-gradient(135deg, hsl(5 62% 56%), hsl(5 62% 44%));
   }
 
   .btn-primary:active {
@@ -180,7 +180,7 @@
 
   .btn-ghost:hover {
     background: hsl(var(--surface));
-    border-color: hsl(193 46% 60% / 0.45);
+    border-color: hsl(5 62% 46% / 0.45);
     color: hsl(var(--foreground));
   }
 
@@ -196,9 +196,9 @@
     font-weight: 600;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: hsl(193 46% 30%);
-    background: hsl(193 46% 60% / 0.12);
-    border: 1px solid hsl(193 46% 60% / 0.25);
+    color: hsl(5 62% 30%);
+    background: hsl(5 62% 46% / 0.10);
+    border: 1px solid hsl(5 62% 46% / 0.25);
     padding: 0.375rem 0.875rem;
     border-radius: 999px;
     margin-bottom: 1.25rem;
@@ -254,7 +254,7 @@
 
   /* Gradient text */
   .gradient-text {
-    background: linear-gradient(135deg, hsl(193 50% 44%), hsl(193 46% 62%), hsl(338 60% 72%));
+    background: linear-gradient(135deg, hsl(5 62% 38%), hsl(5 62% 52%), hsl(177 46% 38%));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -361,13 +361,13 @@
   }
 
   .faq-item.open .faq-trigger {
-    color: hsl(193 46% 40%);
+    color: hsl(5 62% 38%);
   }
 
   .faq-item.open .faq-icon {
     transform: rotate(45deg);
-    background: hsl(193 46% 60% / 0.12);
-    border-color: hsl(193 46% 60% / 0.35);
+    background: hsl(5 62% 46% / 0.10);
+    border-color: hsl(5 62% 46% / 0.35);
   }
 
   .faq-item.open .faq-content {
@@ -409,7 +409,7 @@
 }
 
 .sticky-bar-bg-mobile {
-  background: linear-gradient(to top, hsl(28 100% 97% / 0.98) 75%, transparent);
+  background: linear-gradient(to top, hsl(0 0% 100% / 0.98) 75%, transparent);
 }
 
 @media (max-width: 767px) {
@@ -422,43 +422,43 @@
 
 /* ─── Popup overlay ────────────────────────────────────────────────────────── */
 .popup-overlay-bg {
-  background: hsl(28 100% 97% / 0.95);
+  background: hsl(0 0% 100% / 0.97);
 }
 
 /* ─── Logo / brand gradient ────────────────────────────────────────────────── */
 .brand-icon-bg {
-  background: linear-gradient(135deg, hsl(193 46% 58%), hsl(193 50% 44%));
+  background: linear-gradient(135deg, hsl(5 62% 52%), hsl(5 62% 38%));
 }
 
 /* ─── Disclosure border ────────────────────────────────────────────────────── */
 .disclosure-border {
-  border-left-color: hsl(193 46% 60% / 0.55);
+  border-left-color: hsl(5 62% 46% / 0.55);
 }
 
 /* ─── Hero component classes ───────────────────────────────────────────────── */
 .hero-nav {
-  background: hsl(28 100% 97% / 0.96);
-  box-shadow: 0 1px 0 hsl(338 30% 88%);
+  background: hsl(0 0% 100% / 0.97);
+  box-shadow: 0 1px 0 hsl(0 0% 88%);
 }
 
 .hero-blob-blue {
-  background: radial-gradient(circle, hsl(193 46% 60% / 0.1), transparent 70%);
+  background: radial-gradient(circle, hsl(5 62% 46% / 0.07), transparent 70%);
 }
 
 .hero-blob-rose {
-  background: radial-gradient(circle, hsl(338 70% 91% / 0.18), transparent 70%);
+  background: radial-gradient(circle, hsl(177 46% 32% / 0.08), transparent 70%);
 }
 
 .hero-progress-bar {
-  background: linear-gradient(90deg, hsl(193 46% 58%), hsl(338 60% 72%));
+  background: linear-gradient(90deg, hsl(5 62% 46%), hsl(177 46% 38%));
 }
 
 .hero-stat-chip {
-  background: hsl(193 30% 93%);
+  background: hsl(5 80% 96%);
 }
 
 .hero-stats-bar {
-  background: hsl(193 30% 94% / 0.96);
+  background: hsl(5 80% 97% / 0.96);
 }
 
 .hero-rate-badge {
@@ -467,7 +467,7 @@
 
 /* ─── Pre-footer ambient glow ──────────────────────────────────────────────── */
 .prefooter-glow {
-  background: radial-gradient(ellipse 60% 60% at 50% 120%, hsl(193 46% 60% / 0.1), transparent);
+  background: radial-gradient(ellipse 60% 60% at 50% 120%, hsl(5 62% 46% / 0.07), transparent);
 }
 
 @media (prefers-reduced-motion: reduce) {
