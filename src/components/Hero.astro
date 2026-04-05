@@ -206,21 +206,23 @@ const trustItems = [
   </div>
 
   <script define:vars={{ redirectUrl }}>
-    const grid = document.getElementById('amount-grid');
+    var grid = document.getElementById('amount-grid');
     if (grid) {
-      grid.addEventListener('click', (e) => {
-        const btn = (e.target as HTMLElement).closest('.amount-btn') as HTMLButtonElement | null;
+      grid.addEventListener('click', function(e) {
+        var btn = e.target.closest('.amount-btn');
         if (!btn) return;
-        grid.querySelectorAll('.amount-btn').forEach(b => b.classList.remove('amount-btn--active'));
+        grid.querySelectorAll('.amount-btn').forEach(function(b) {
+          b.classList.remove('amount-btn--active');
+        });
         btn.classList.add('amount-btn--active');
       });
     }
 
-    const ctaBtn   = document.getElementById('hero-cta') as HTMLButtonElement | null;
-    const ctaError = document.getElementById('hero-cta-error') as HTMLElement | null;
-    const zipInput = document.querySelector<HTMLInputElement>('input[placeholder="Enter your ZIP code"]');
+    var ctaBtn   = document.getElementById('hero-cta');
+    var ctaError = document.getElementById('hero-cta-error');
+    var zipInput = document.querySelector('input[placeholder="Enter your ZIP code"]');
 
-    function showError(msg: string) {
+    function showError(msg) {
       if (!ctaError) return;
       ctaError.textContent = msg;
       ctaError.classList.remove('hidden');
@@ -235,10 +237,10 @@ const trustItems = [
     if (ctaBtn && zipInput) {
       zipInput.addEventListener('input', clearError);
 
-      ctaBtn.addEventListener('click', () => {
-        const zip = zipInput.value.trim();
-        const activeAmountBtn = grid?.querySelector<HTMLButtonElement>('.amount-btn--active');
-        const amount = activeAmountBtn?.dataset.amount ?? '';
+      ctaBtn.addEventListener('click', function() {
+        var zip = zipInput.value.trim();
+        var activeAmountBtn = grid ? grid.querySelector('.amount-btn--active') : null;
+        var amount = activeAmountBtn ? activeAmountBtn.dataset.amount : '';
 
         if (!/^\d{5}$/.test(zip)) {
           showError('Please enter a valid 5-digit ZIP code.');
@@ -247,15 +249,15 @@ const trustItems = [
         }
 
         if (!amount) {
-          showError('Please select a loan amount.');
+          showError('Please select a care plan amount.');
           return;
         }
 
         clearError();
-        const params = new URLSearchParams({ zip, amount });
-        const base = redirectUrl || '/apply';
-        const sep = base.includes('?') ? '&' : '?';
-        window.location.href = `${base}${sep}${params.toString()}`;
+        var params = new URLSearchParams({ zip: zip, amount: amount });
+        var base = redirectUrl || '/apply';
+        var sep = base.includes('?') ? '&' : '?';
+        window.location.href = base + sep + params.toString();
       });
     }
   </script>
