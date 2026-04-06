@@ -19,18 +19,18 @@ const rows = [
 
       <!-- Left: description -->
       <div>
-        <span class="section-label">Transparent Pricing</span>
-        <h2 class="section-title">Representative APR<br/>Comparison Table</h2>
+        <span class="section-label">Complete Rate Transparency</span>
+        <h2 class="section-title">Payment Plan Rates<br/>by Credit Profile</h2>
         <p class="text-foreground/70 text-base leading-relaxed mb-6">
-          Our rates are determined by your credit profile and loan details. The table shows representative rates across all credit tiers — no hidden costs, ever.
+          Rates are determined by credit profile and plan term. This table shows representative APRs across credit tiers—no hidden fees, no surprises.
         </p>
 
         <div class="space-y-3 mb-8">
           {[
-            'Fixed rate for the entire loan duration',
-            'No prepayment penalties — pay off early for free',
-            'No origination fee on qualifying loans',
-            'Rate lock from application to funding',
+            'Fixed rate—never changes during your term',
+            'Zero prepayment penalties—pay early, save interest',
+            'No application or origination fees',
+            'Rate locked at approval—guaranteed pricing',
           ].map(item => (
             <div class="flex items-start gap-3">
               <div class="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"
@@ -50,7 +50,7 @@ const rows = [
             <circle cx="12" cy="12" r="10"/><path d="M12 8v4"/><path d="M12 16h.01"/>
           </svg>
           <p class="text-foreground/70 text-xs leading-relaxed">
-            <strong class="text-foreground/70">Representative APR {aprMin}%–{aprMax}%.</strong> The Representative APR is based on a loan of $5,000 over 60 months. Not all applicants will receive the representative rate; your actual rate depends on individual circumstances.
+            <strong class="text-foreground/70">Representative example: {aprMin}%–{aprMax}% APR.</strong> Based on $5,000 financed over 60 months. Your actual rate depends on credit profile, income verification, and underwriting approval. All rates shown before you sign.
           </p>
         </div>
       </div>
@@ -97,12 +97,12 @@ const rows = [
           </table>
 
           <div class="px-5 py-4" style="background: hsl(193 30% 93%);">
-            <p class="text-foreground/60 text-xs">Example based on $5,000 loan over 60 months. Representative APR {aprMin}%. Total amount repayable varies by rate.</p>
+            <p class="text-foreground/60 text-xs">Representative example: $5,000 financed over 60 months at {aprMin}% APR. Total repayment varies by approved rate. All costs disclosed before confirmation.</p>
           </div>
         </div>
 
         <a href={redirectUrl} class="btn-primary w-full text-center mt-5 py-4">
-          Check Your Personalised Rate
+          Unlock 0% Financing Options →
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
             <path d="M5 12h14M12 5l7 7-7 7"/>
           </svg>

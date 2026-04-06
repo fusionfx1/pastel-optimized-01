@@ -4,32 +4,32 @@ const redirectUrl = import.meta.env.PUBLIC_REDIRECT_URL || '${redirectUrl}';
 const steps = [
   {
     num: '01',
-    title: 'See your plan options in 60 seconds',
-    desc: 'Enter a few basic details and Scratchpay\'s proprietary technology returns your available payment plan options in under a minute — using a soft inquiry that never touches your credit score.',
+    title: 'Get approved in 60 seconds—no credit damage',
+    desc: 'Enter basic details and our proprietary approval technology returns your payment plan options instantly. Soft inquiry only—your credit score stays untouched.',
     icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>`,
     accent: 'hsl(193 46% 44%)',
     accentBg: 'hsl(193 46% 60% / 0.12)',
   },
   {
     num: '02',
-    title: 'Compare plans — pick what fits your budget',
-    desc: 'Review your plan options side by side. See the monthly payment, total cost, and APR for each before you choose. Including 0% APR promotional options for qualified applicants.',
+    title: 'Review transparent options—choose your plan',
+    desc: 'Compare plans side by side with full transparency. Monthly payment, total cost, and APR shown upfront—including 0% APR options for qualified pet owners.',
     icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>`,
     accent: 'hsl(338 55% 60%)',
     accentBg: 'hsl(338 70% 91% / 0.5)',
   },
   {
     num: '03',
-    title: 'Confirm at the clinic — paperless',
-    desc: 'Scratchpay integrates directly with your veterinary practice\'s system. No printing, no branch visits. Confirm your plan digitally from any device — at the clinic or from the waiting room.',
+    title: 'Confirm digitally—zero paperwork',
+    desc: 'Direct integration with your vet clinic\'s system. No printing, no faxing, no branch visits. Confirm your plan from any device—even from the waiting room.',
     icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>`,
     accent: 'hsl(130 42% 48%)',
     accentBg: 'hsl(130 42% 82% / 0.3)',
   },
   {
     num: '04',
-    title: 'Direct your attention back to your pet',
-    desc: 'The financial decision is made. You know the amount, the term, and the monthly payment. It becomes a fixed line in your budget — and your pet gets the care they need, today.',
+    title: 'Focus on what matters—your pet\'s recovery',
+    desc: 'The financial decision is complete. Fixed monthly payment, clear timeline, known cost. Your budget stays predictable while your pet gets the care they need today.',
     icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>`,
     accent: 'hsl(193 46% 44%)',
     accentBg: 'hsl(193 46% 60% / 0.12)',
@@ -41,10 +41,10 @@ const steps = [
   <div class="max-w-6xl mx-auto">
 
     <div class="text-center mb-16">
-      <span class="section-label">The Intelligent Way to Pay for Vet Care</span>
-      <h2 class="section-title max-w-xl mx-auto">How Scratchpay Works</h2>
+      <span class="section-label">The Intelligent Way to Finance Veterinary Care</span>
+      <h2 class="section-title max-w-xl mx-auto">How It Works</h2>
       <p class="text-foreground/70 text-base max-w-lg mx-auto">
-        Veterinary financing built for how emergencies actually work — fast, transparent, and designed around your budget, not a credit committee.
+        Payment plans built for veterinary emergencies—fast, transparent, and designed around your budget, not a credit committee's calendar.
       </p>
     </div>
 
@@ -81,11 +81,11 @@ const steps = [
     <!-- Bottom CTA strip -->
     <div class="mt-10 glass-card p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
       <div>
-        <p class="font-display font-bold text-foreground text-base">See your plan options before you commit to anything</p>
-        <p class="text-foreground/70 text-sm">Takes 60 seconds. Soft inquiry only — zero impact to your credit score.</p>
+        <p class="font-display font-bold text-foreground text-base">See your payment options before you commit to anything</p>
+        <p class="text-foreground/70 text-sm">60-second approval check. Soft inquiry only—no credit score impact.</p>
       </div>
       <a href={redirectUrl} class="btn-primary flex-shrink-0">
-        Start My 60-Second Check — It's Free
+        Get Your Payment Plan Now →
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
           <path d="M5 12h14M12 5l7 7-7 7"/>
         </svg>
